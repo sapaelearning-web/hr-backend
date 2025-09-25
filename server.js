@@ -12,6 +12,11 @@ const PORT = process.env.PORT || 5000;
 
 // Middleware
 app.use(bodyParser.json());
+app.use(cors({
+  origin: "*",
+  methods: ['GET','POST','DELETE','OPTIONS'],
+  credentials: true
+}));
 
 // MongoDB Connection
 mongoose.connect('mongodb+srv://sapaelearning_db_user:GnwX3iI5U2dCVKDT@cluster0.pckipja.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0', {
